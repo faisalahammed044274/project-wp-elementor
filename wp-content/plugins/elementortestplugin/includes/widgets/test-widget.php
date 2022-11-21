@@ -55,47 +55,11 @@ class test_widget extends \Elementor\Widget_Base
         );
 
         $this->add_control(
-            'title',
+            'mytitle',
             [
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'label' => esc_html__('Title', 'elementortestplugin'),
+                'label' => esc_html__('Hello From First Widget', 'elementortestplugin'),
                 'placeholder' => esc_html__('Enter your title', 'textdomain'),
-            ]
-        );
-
-        $this->add_control(
-            'size',
-            [
-                'type' => \Elementor\Controls_Manager::NUMBER,
-                'label' => esc_html__('Size', 'elementortestplugin'),
-                'placeholder' => '0',
-                'min' => 0,
-                'max' => 100,
-                'step' => 1,
-                'default' => 50,
-            ]
-        );
-
-        $this->add_control(
-            'alignment',
-            [
-                'type' => \Elementor\Controls_Manager::CHOOSE,
-                'label' => esc_html__('Alignment', 'elementortestplugin'),
-                'options' => [
-                    'left' => [
-                        'title' => esc_html__('Left', 'textdomain'),
-                        'icon' => 'eicon-text-align-left',
-                    ],
-                    'center' => [
-                        'title' => esc_html__('Center', 'textdomain'),
-                        'icon' => 'eicon-text-align-center',
-                    ],
-                    'right' => [
-                        'title' => esc_html__('Right', 'textdomain'),
-                        'icon' => 'eicon-text-align-right',
-                    ],
-                ],
-                'default' => 'center',
             ]
         );
 
@@ -104,6 +68,10 @@ class test_widget extends \Elementor\Widget_Base
 
     protected function render()
     {
+        $settings = $this->get_settings_for_display();
+        $supertitle = $settings['mytitle'];
+
+        echo '<h2>' . esc_html($supertitle) . '</h2>';
     }
 
     protected function _content_template()
