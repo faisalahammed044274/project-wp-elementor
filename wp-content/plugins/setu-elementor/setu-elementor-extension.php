@@ -8,9 +8,6 @@
  * Author:      Setu
  * Author URI:  https://mfasetu.com/
  * Text Domain: SetuTestAddon
- *
- * Elementor tested up to: 3.7.0
- * Elementor Pro tested up to: 3.7.0
  */
 
 if (!defined('ABSPATH')) {
