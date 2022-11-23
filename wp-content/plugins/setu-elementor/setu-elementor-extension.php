@@ -14,50 +14,16 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-/**
- * Plugin class.
- *
- * The main class that initiates and runs the addon.
- *
- * @since 1.0.0
- */
 final class SetuTestPlugin
 {
 
-    /**
-     * Addon Version
-     *
-     * @since 1.0.0
-     * @var string The addon version.
-     */
     const VERSION = '1.0.0';
 
-    /**
-     * Minimum Elementor Version
-     *
-     * @since 1.0.0
-     * @var string Minimum Elementor version required to run the addon.
-     */
     const MINIMUM_ELEMENTOR_VERSION = '3.2.0';
 
-    /**
-     * Minimum PHP Version
-     *
-     * @since 1.0.0
-     * @var string Minimum PHP version required to run the addon.
-     */
     const MINIMUM_PHP_VERSION = '7.3';
 
-    /**
-     * Instance
-     *
-     * @since 1.0.0
-     * @access private
-     * @static
-     * @var \Elementor_Test_Addon\Plugin The single instance of the class.
-     */
     private static $_instance = null;
-
 
     public static function instance()
     {
@@ -78,14 +44,6 @@ final class SetuTestPlugin
 
     }
 
-    /**
-     * Compatibility Checks
-     *
-     * Checks whether the site meets the addon requirement.
-     *
-     * @since 1.0.0
-     * @access public
-     */
     public function is_compatible()
     {
 
@@ -111,7 +69,6 @@ final class SetuTestPlugin
 
     }
 
-
     public function admin_notice_missing_main_plugin()
     {
 
@@ -129,7 +86,6 @@ final class SetuTestPlugin
         printf('<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message);
 
     }
-
 
     public function admin_notice_minimum_elementor_version()
     {
@@ -150,7 +106,6 @@ final class SetuTestPlugin
 
     }
 
- 
     public function admin_notice_minimum_php_version()
     {
 
@@ -170,7 +125,6 @@ final class SetuTestPlugin
 
     }
 
-
     public function init()
     {
 
@@ -178,7 +132,6 @@ final class SetuTestPlugin
         add_action('elementor/controls/register', [$this, 'register_controls']);
 
     }
-
 
     public function register_widgets($widgets_manager)
     {
@@ -200,6 +153,9 @@ final class SetuTestPlugin
         $controls_manager->register(new Control_1());
         $controls_manager->register(new Control_2());
 
+		add_action( 'elementor/elements/categories_registered', 'add_elementor_widget_categories' );
     }
+
+
 
 }
