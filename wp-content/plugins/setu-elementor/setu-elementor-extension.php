@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Plugin Name: SetuTestAddon
+ * Plugin Name: FaisalTestAddon
  * Description: Custom Elementor addon.
- * Plugin URI:  https://mfasetu.com/
+ * Plugin URI:  https://github.com/faisalahammed044274
  * Version:     1.0.0
- * Author:      Setu
- * Author URI:  https://mfasetu.com/
+ * Author:      FaisalAhammed
+ * Author URI:  https://github.com/faisalahammed044274
  * Text Domain: SetuTestAddon
  */
 
